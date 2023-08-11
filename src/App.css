@@ -1,0 +1,44 @@
+*{
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  margin:0;
+}
+
+.bg-body-tertiary{
+  margin:0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  top:100%;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  margin-top:100vh;
+  flex-shrink: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.todolistitem{
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  
+}
