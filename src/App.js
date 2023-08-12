@@ -12,6 +12,16 @@ function App() {
     setTodoList((prevTodoList) => [...prevTodoList, todo]); 
   };
 
+  const handlecutbutton = (index) => {
+    console.log("DELETE COMMAND ISSUED FOR : ", index);
+    setTodoList((prevTodoList) => {
+      return prevTodoList.filter((todo, i) => {
+        return i !== index;
+      });
+    });
+  };
+
+
   useEffect(() => {
     console.log(todoList); 
   }, [todoList]);
@@ -19,9 +29,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <Input addTodo={addTodo} />
-      <List sending_todo_list = {todoList}/>
+      <List sending_todo_list = {todoList} sending_del_func = {handlecutbutton}/>
       {/* <Footer /> */}
     </div>
   );
