@@ -50,11 +50,8 @@ To run the To-Do List App locally, follow these steps:
 The To-Do List App currently provides basic functionality for managing tasks. Additional features that can be added in the future include:
 
 - Delete button for each to-do item.
-- Strikethrough styling for completed items.
 - Clear button to remove all completed items.
-- Clear button to remove all items.
-- Sort and filter options for the to-do list.
-- User authentication and individual to-do lists.
+- Sort and filter options for the to-do list. {In Process}
 
 ## Future Enhancements
 
