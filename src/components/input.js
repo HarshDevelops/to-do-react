@@ -5,13 +5,8 @@ const Input = ({ addTodo }) => {
   
   const handleAddTodo = (e) => {
     e.preventDefault();
-    console.log(inputValue);
     if (!inputValue) {
-      return(
-        <div class="alert alert-primary" role="alert">
-        This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-      </div>
-      );
+    alert("Please Enter a Valid To-Do Item")
     } else {
       addTodo(inputValue);
       setInputValue('');

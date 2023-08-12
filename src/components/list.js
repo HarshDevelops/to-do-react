@@ -1,10 +1,16 @@
 import React from 'react';
 
-const List = ({ sending_todo_list, sending_del_func }) => {
+const List = ({ sending_todo_list, sending_del_func , handlealldelete }) => {
 
   if (!sending_todo_list || sending_todo_list.length === 0) {
     return (
-      <h6 style={{ textAlign: 'center', marginTop: '10px' }}> <b><u>Nothing To Do For Now! </u></b></h6>
+      <>
+      <h6 style={{ textAlign: 'center', marginTop: '10px' }}> <b><u>Nothing To Do For Now! Enjoy The Beautiful Scenary!</u></b></h6>
+      <div className="container">
+        <div className="aurora"></div>
+        <div className="landscape"></div>
+      </div>
+      </>
     );
   }
   return (
@@ -26,7 +32,7 @@ const List = ({ sending_todo_list, sending_del_func }) => {
         <p style={{ textAlign: 'center', marginTop: '10px' }}> <b><u>Number of To-Do Items Remaining: {sending_todo_list.length}</u></b></p>
 
         <div style={{ textAlign: 'center', justifyContent: 'center', display: 'flex', marginTop: '10px' }}>
-          <button type="button" className="btn btn-success">Completed All Tasks? Click Here!</button>
+          <button type="button" className="btn btn-success" onClick = {()=> {handlealldelete()}}>Completed All Tasks? Click Here!</button>
         </div>
       </div>
     </>

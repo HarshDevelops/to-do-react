@@ -1,5 +1,4 @@
 import './App.css';
-import Navbar from './components/navbar';
 import Input from './components/input';
 import List from './components/list';
 import React, { useState, useEffect } from 'react';
@@ -12,8 +11,14 @@ function App() {
     setTodoList((prevTodoList) => [...prevTodoList, todo]); 
   };
 
+  const handlealldelete = () => {
+    setTodoList([]);
+    setTimeout(() => {
+      alert("All Items Deleted Successfully!");
+    }, 100);
+  };
+
   const handlecutbutton = (index) => {
-    console.log("DELETE COMMAND ISSUED FOR : ", index);
     setTodoList((prevTodoList) => {
       return prevTodoList.filter((todo, i) => {
         return i !== index;
@@ -22,17 +27,11 @@ function App() {
   };
 
 
-  useEffect(() => {
-    console.log(todoList); 
-  }, [todoList]);
-
-
   return (
     <div className="App">
-      {/* <Navbar /> */}
       <Input addTodo={addTodo} />
-      <List sending_todo_list = {todoList} sending_del_func = {handlecutbutton}/>
-      {/* <Footer /> */}
+      <List sending_todo_list = {todoList} sending_del_func = {handlecutbutton} handlealldelete={handlealldelete}/>
+
     </div>
   );
 }
