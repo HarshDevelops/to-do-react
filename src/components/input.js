@@ -1,15 +1,22 @@
 import React from 'react';
 
 const Input = ({ addTodo }) => {
-  const [inputValue, setInputValue] = React.useState(''); // <-- Use useState inside the component
-
+  const [inputValue, setInputValue] = React.useState(''); 
+  
   const handleAddTodo = (e) => {
     e.preventDefault();
     console.log(inputValue);
-    addTodo(inputValue);
-    setInputValue('');
+    if (!inputValue) {
+      return(
+        <div class="alert alert-primary" role="alert">
+        This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      );
+    } else {
+      addTodo(inputValue);
+      setInputValue('');
+    }
   };
-
   return (
     <div>
       <form className="form-inline text-center">
@@ -17,7 +24,7 @@ const Input = ({ addTodo }) => {
           <label htmlFor="todoitem" className="sr-only">
           </label>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h3> <u>Your To-Do</u></h3>
+            <h1> <u>Your To-Do</u></h1>
         <input
           style={{ width: '50%' }}
           type="text"
